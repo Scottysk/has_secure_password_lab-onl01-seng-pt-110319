@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
   
   def create 
-    @user = User.create()
+    @user = User.find_by()
   end
   
   
