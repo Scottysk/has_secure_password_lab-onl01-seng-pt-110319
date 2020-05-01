@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     @user.save
       session[:user_id] = @user.id
-      redirect_to :welcome
+      redirect_to :new
   end
   
   def user_params
