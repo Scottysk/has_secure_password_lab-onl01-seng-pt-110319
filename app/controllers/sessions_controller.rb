@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   def create 
     @user = User.find_by(name: params[:user][:name])
     @authenticated = @user.try(:authenticate, params[:user][:password])
-    if authenticated
-      sessions[:user_id] = @user.id
+    if @authenticated
+      session[:user_id] = @user.id
       redirect_to :welcome
     else
       redirect_to :login
